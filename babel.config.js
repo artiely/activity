@@ -1,5 +1,14 @@
 module.exports = {
   presets: [
-    '@vue/cli-plugin-babel/preset'
+    '@vue/app'
+  ],
+  plugins: [
+    [
+      'import',
+      {
+        libraryName: 'mand-mobile',
+        libraryDirectory: 'components'
+      }
+    ]
   ]
 }
