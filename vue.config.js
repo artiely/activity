@@ -13,6 +13,21 @@ if (process.env.VUE_APP_MODE === 'test') {
   assetsDir = './static'
 }
 const resolve = file => path.resolve(__dirname, file)
+// 引入插件
+const {
+  skeleton,
+  TerserPlugin,
+  compressionWebpackPlugin,
+  zipPlugin,
+} = require('./webpack.plugin')
+// 按需加载插件
+const pluginsFnc = () => {
+  if (process.env.NODE_ENV === 'production') {
+    return [TerserPlugin, zipPlugin, skeleton, compressionWebpackPlugin]
+  } else {
+    return []
+  }
+}
 module.exports = {
   publicPath: '',
   outputDir: outputDir,
@@ -74,5 +89,22 @@ module.exports = {
   },
   transpileDependencies: [
     'mand-mobile'
-  ]
+  ],
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@': resolve('src'),
+        '@views': resolve('src/views'),
+        '@components': resolve('src/components'),
+        '@assets': resolve('src/assets'),
+        '@router': resolve('src/router'),
+        '@common': resolve('src/common'),
+        '@store': resolve('src/store'),
+        '@layout': resolve('src/layout'),
+        '@api': resolve('src/api'),
+        '@config': resolve('src/config'),
+      },
+    },
+    plugins: pluginsFnc(),
+  },
 }

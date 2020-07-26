@@ -2,7 +2,7 @@
   <div class="hello">
     <h1><span>{{ msg }}</span></h1>
     <p>
-      A mobile UI toolkit, based on Vue.js 2, designed for financial scenarios.
+      开挂从这里开始
     </p>
     <br/>
     <md-button type="primary" @click="greet">Click Me</md-button>

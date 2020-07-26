@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Mand Mobile"/>
+    <HelloWorld msg="Hello Timing"/>
   </div>
 </template>
 
