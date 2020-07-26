@@ -1,24 +1,16 @@
-# act-template
+## 重要！服用前请先阅读使用说明
 
-## Project setup
+## 打包
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+npm run build:all 打包所有环境
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## 配置
+`src/config`配置基础路径
 
-### Lints and fixes files
+## 本地测试对应环境
+```sh
+npm run local:[mode]
+# npm run local:stage
 ```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+`server.js`配置本地测试
