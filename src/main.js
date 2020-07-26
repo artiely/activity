@@ -8,6 +8,9 @@ import "tool.less"
 import {Api} from '@/api'
 Vue.use(Api)
 Vue.config.productionTip = false
+import { Button, Toast } from "mand-mobile";
+Vue.component(Button.name, Button)
+Vue.component(Toast.name, Toast)
 
 new Vue({
   router,

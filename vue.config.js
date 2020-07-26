@@ -107,4 +107,11 @@ module.exports = {
     },
     plugins: pluginsFnc(),
   },
+  //本地服务器代理
+  devServer: {
+    host : '0.0.0.0',
+    proxy: 'http://118.31.222.92', // 服务器ip
+    // proxy: 'http://101.37.27.140:8083',
+    port: '8080',   //端口
+  },
 }
