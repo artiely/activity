@@ -25,5 +25,5 @@ console.log(
 console.log(
   '%c 当前的baseURL %c' + baseURL + '',
   'color: #fff; background: #555555; padding:5px;',
-  'color: #fff;background: #1890ff; padding:5px 0;'
+  'color: #fff;background: #1890ff; padding:5px;'
 )

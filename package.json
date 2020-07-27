@@ -5,8 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "serve:test": "vue-cli-service serve  --mode testdev",
-    "serve:stage": "vue-cli-service serve  --mode stage",
-    "serve:release": "vue-cli-service serve  --mode release",
+    "serve:stage": "vue-cli-service serve  --mode stagedev",
+    "serve:release": "vue-cli-service serve  --mode releasedev",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "build:test": "vue-cli-service build --mode test",
