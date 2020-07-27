@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">Home|
-      <router-link to="/about">About</router-link>
-    </div> -->
+  <div
+    id="app"
+    :style="isSetting?'padding-bottom:120px':''"
+  >
     <router-view />
     <md-tab-bar
+      v-if="isSetting"
       v-model="current"
       :items="items"
       :has-ink="false"
@@ -27,11 +27,13 @@
 </template>
 <script>
 // @ is an alias to /src
+import { isSetting } from '@config'
 export default {
   data () {
     return {
       current: 1,
       items: [{ name: 1, label: '首页', icon: 'profession', path: '/' }, { name: 2, label: '调试', icon: 'id-card', path: '/about' }],
+      isSetting
     }
   },
   watch: {
@@ -54,10 +56,6 @@ export default {
 };
 </script>
 <style lang="stylus">
-#app {
-  padding-bottom: 160px;
-}
-
 .nav {
   position: fixed;
   bottom: 0;

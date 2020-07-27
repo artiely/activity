@@ -5,6 +5,7 @@ import store from './store'
 import "mand-mobile/components/_style/global.styl";
 import "normalize.css";
 import "tool.less"
+import "@config/log"
 import {Api} from '@/api'
 Vue.use(Api)
 Vue.config.productionTip = false
