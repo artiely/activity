@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    // TODO:FIXME:
-    "serve:test": "cross-env NODE_ENV=production vue-cli-service serve  --mode test",
+    "serve:test": "vue-cli-service serve  --mode testdev",
     "serve:stage": "vue-cli-service serve  --mode stage",
     "serve:release": "vue-cli-service serve  --mode release",
     "build": "vue-cli-service build",
@@ -14,14 +13,15 @@
     "build:stage": "vue-cli-service build --mode stage",
     "build:release": "vue-cli-service build --mode release",
     "build:all": "npm run build:test && npm run build:stage && npm run build:release",
-    "local:test": "node ./server.js test",
-    "local:stage": "node ./server.js stage",
-    "local:release": "node ./server.js release"
+    "local:test": "node server/start.js test",
+    "local:stage": "node server/start.js stage",
+    "local:release": "node server/start.js release"
   },
   "dependencies": {
     "address": "^1.1.2",
     "axios": "^0.19.2",
     "compression-webpack-plugin": "^4.0.0",
+    "connect-history-api-fallback": "^1.6.0",
     "core-js": "^3.6.5",
     "cross-env": "^7.0.2",
     "express": "^4.17.1",
@@ -45,6 +45,8 @@
     "@vue/cli-service": "~4.4.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-import": "^1.8.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "less": "^3.0.4",

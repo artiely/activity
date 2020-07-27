@@ -1,6 +1,8 @@
 const path = require('path')
 const poststylus = require('poststylus')
 const pxtorem = require('postcss-pxtorem')
+const resolve = (file) => path.resolve(__dirname, file)
+const MODE = process.env.VUE_APP_MODE
 let outputDir, assetsDir
 if (process.env.VUE_APP_MODE === 'test') {
   outputDir = 'dist/test'
@@ -12,7 +14,21 @@ if (process.env.VUE_APP_MODE === 'test') {
   outputDir = 'dist/release'
   assetsDir = './static'
 }
-const resolve = file => path.resolve(__dirname, file)
+let baseURL = ''
+if (MODE === 'dev') {
+  // 开发
+  baseURL = 'http://118.31.222.92'
+} else if (MODE === 'test') {
+  // 测试环境
+  baseURL = 'http://118.31.222.92'
+} else if (MODE === 'stage') {
+  // 灰度环境
+  baseURL = 'http://118.31.222.92'
+} else if (MODE === 'release') {
+  // 正式环境
+  baseURL = 'http://118.31.222.92'
+}
+
 // 引入插件
 const {
   skeleton,
@@ -51,14 +67,12 @@ module.exports = {
             pxtorem({
               rootValue: 100,
               propWhiteList: [],
-              minPixelValue: 2
+              minPixelValue: 2,
             }),
-            'autoprefixer'
-          ])
+            'autoprefixer',
+          ]),
         ],
-        import: [
-          resolve('./src/assets/theme.custom')
-        ]
+        import: [resolve('./src/assets/theme.custom')],
       },
       stylus: {
         use: [
@@ -66,30 +80,26 @@ module.exports = {
             pxtorem({
               rootValue: 100,
               propWhiteList: [],
-              minPixelValue: 2
+              minPixelValue: 2,
             }),
-            'autoprefixer'
-          ])
+            'autoprefixer',
+          ]),
         ],
-        import: [
-          resolve('./src/assets/theme.custom')
-        ]
+        import: [resolve('./src/assets/theme.custom')],
       },
       postcss: {
         plugins: [
           require('postcss-pxtorem')({
             rootValue: 100,
             propWhiteList: [],
-            minPixelValue: 2
+            minPixelValue: 2,
           }),
-          require('autoprefixer')()
-        ]
-      }
-    }
+          require('autoprefixer')(),
+        ],
+      },
+    },
   },
-  transpileDependencies: [
-    'mand-mobile'
-  ],
+  transpileDependencies: ['mand-mobile'],
   configureWebpack: {
     resolve: {
       alias: {
@@ -109,9 +119,9 @@ module.exports = {
   },
   //本地服务器代理
   devServer: {
-    host : '0.0.0.0',
-    proxy: 'http://118.31.222.92', // 服务器ip
+    host: '0.0.0.0',
+    proxy: baseURL, // 服务器ip
     // proxy: 'http://101.37.27.140:8083',
-    port: '8080',   //端口
+    port: '8080', //端口
   },
 }

@@ -1,9 +1,6 @@
 import fetch from '../fetch'
-export const JavaUrl = process.env.NODE_ENV === 'production'
-? 'http://47.111.114.205:12800'  //测试服
-// ? 'http://47.111.19.97:12800/' //灰度服
-// ? 'ms.timing360.com/' //正式服
-: 'http://47.111.114.205:12800'
+import {JavaUrl} from '@config'
+
 // 示例
 export const userWallet = data => {
   return fetch({
