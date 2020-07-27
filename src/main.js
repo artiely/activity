@@ -8,10 +8,11 @@ import "tool.less"
 import {Api} from '@/api'
 Vue.use(Api)
 Vue.config.productionTip = false
-import { Button, Toast } from "mand-mobile";
+import { Button, Toast,TabBar, Icon } from "mand-mobile";
 Vue.component(Button.name, Button)
 Vue.component(Toast.name, Toast)
-
+Vue.component(TabBar.name, TabBar)
+Vue.component(Icon.name, Icon)
 new Vue({
   router,
   store,
