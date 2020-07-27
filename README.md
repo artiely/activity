@@ -1,5 +1,10 @@
 ## 重要！服用前请先阅读使用说明
-
+## 创建
+该项目可以通过`timing-cli`创建
+```sh
+npm i -g timing-cli
+# 选择活动模板
+```
 ## 打包
 ```
 npm run build:all 打包所有环境
