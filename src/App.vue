@@ -17,9 +17,6 @@
         slot-scope="{ item }"
       >
         <div class="custom-item">
-          <div class="icon">
-            <md-icon :name="item.icon" />
-          </div>
           <div class="text">
             <span v-text="item.label"></span>
           </div>
@@ -57,12 +54,17 @@ export default {
 };
 </script>
 <style lang="stylus">
+#app {
+  padding-bottom: 160px;
+}
+
 .nav {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   z-index: 99;
+  box-shadow: 0 0 10px -3px rgba(0, 0, 0, 0.5);
 
   .custom-item {
     text-align: center;
