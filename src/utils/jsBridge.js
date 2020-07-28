@@ -44,7 +44,7 @@ export default class JSBridge {
             reject(error)
           }
           // iOS
-        } else if (isiOS) {
+        } else if (isIOS) {
           try {
             window[iosCallback] = (res) => {
               resolve(res)
