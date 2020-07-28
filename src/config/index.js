@@ -9,20 +9,18 @@ let isSetting = false
 if (MODE === 'dev') {
   // 开发
   baseURL = ''
-  JavaUrl = 'http://47.111.114.205:12800'
-  isSetting = true
+  JavaUrl = '//47.111.114.205:12800'
 } else if (MODE === 'test') {
   // 测试环境
-  baseURL = 'http://118.31.222.92:8088'
-  JavaUrl = 'http://47.111.114.205:12800'
-  isSetting = true
+  baseURL = '//118.31.222.92'
+  JavaUrl = '//47.111.114.205:12800'
 } else if (MODE === 'stage') {
   // 灰度环境
-  baseURL = '//101.37.27.140:12800'
-  JavaUrl = 'http://47.111.19.97:12800'
+  baseURL = '//101.37.27.140:8083'
+  JavaUrl = '//47.111.19.97:12800'
 } else if (MODE === 'release') {
   // 正式环境
-  baseURL = 'https://sp.timing360.com'
-  JavaUrl = '//ms.timing360.com/'
+  baseURL = '//actapi.timing360.com'
+  JavaUrl = '//ms.timing360.com'
 }
 export { baseURL, JavaUrl, isSetting }
