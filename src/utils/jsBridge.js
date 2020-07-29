@@ -37,24 +37,35 @@ export default class JSBridge {
         )
         // android
         if (isAndroid) {
+          console.log('安卓')
+          console.log('安卓')
           try {
-            let res = window.android[method](args)
-            resolve(res)
+            if(args){
+              let res = window.android['getUserID'](args)
+              resolve(res)
+            }else{
+              let res = window.android['getUserID']()
+              resolve(res)
+            }
           } catch (error) {
             reject(error)
           }
           // iOS
         } else if (isIOS) {
           try {
-            window[iosCallback] = (res) => {
-              resolve(res)
+            if (iosCallback) {
+              window[iosCallback] = (res) => {
+                resolve(res)
+              }
+            }else{
+              reject({ type: '-1' })
             }
             window.webkit.messageHandlers[method].postMessage(args)
           } catch (error) {
             reject(error)
           }
         } else {
-          reject(JSON.stringify({ type: '-1' }))
+          reject({ type: '-1' })
         }
       })
     }

@@ -1,16 +1,24 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Hello Timing"/>
+    用户ID {{uid}}
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import { getUserID } from '@/utils/nativeApi'
 export default {
   name: "home",
-  components: {
-    HelloWorld
+  data () {
+    return {
+      uid: ''
+    }
+  },
+  created () {
+    getUserID().then(res => {
+      this.uid = res
+      console.log(res)
+    })
   }
 };
 </script>
