@@ -37,8 +37,6 @@ export default class JSBridge {
         )
         // android
         if (isAndroid) {
-          console.log('安卓')
-          console.log('安卓')
           try {
             if(args){
               let res = window.android['getUserID'](args)
