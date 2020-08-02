@@ -23,7 +23,7 @@ export default function fetch(options) {
   let headers = options.createJson
     ? {}
     : {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
       }
   // 超时 10s
   let timeout = configs.api.timeout || 100000

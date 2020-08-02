@@ -4,13 +4,13 @@ const pxtorem = require('postcss-pxtorem')
 const resolve = (file) => path.resolve(__dirname, file)
 const MODE = process.env.VUE_APP_MODE
 let outputDir, assetsDir
-if (process.env.VUE_APP_MODE === 'test') {
+if (MODE === 'test') {
   outputDir = 'dist/test'
   assetsDir = './static'
-} else if (process.env.VUE_APP_MODE === 'stage') {
+} else if (MODE === 'stage') {
   outputDir = 'dist/gray'
   assetsDir = './static'
-} else if (process.env.VUE_APP_MODE === 'release') {
+} else if (MODE === 'release') {
   outputDir = 'dist/release'
   assetsDir = './static'
 }
@@ -18,13 +18,13 @@ let baseURL = ''
 if (MODE === 'dev') {
   // 开发
   baseURL = 'http://118.31.222.92'
-} else if (MODE === 'test') {
+} else if (MODE === 'testdev') {
   // 测试环境
   baseURL = 'http://118.31.222.92'
-} else if (MODE === 'stage') {
+} else if (MODE === 'stagedev') {
   // 灰度环境
   baseURL = 'http://118.31.222.92'
-} else if (MODE === 'release') {
+} else if (MODE === 'releasedev') {
   // 正式环境
   baseURL = 'http://118.31.222.92'
 }
