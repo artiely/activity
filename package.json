@@ -28,7 +28,7 @@
     "http-proxy-middleware": "^1.0.5",
     "mand-mobile": "^2.5.1",
     "normalize.css": "^8.0.0",
-    "qs": "^6.9.4",
+    "qs": "^6.9.7",
     "terser-webpack-plugin": "^3.0.7",
     "tool.less": "^1.0.1",
     "vconsole": "^3.3.4",
