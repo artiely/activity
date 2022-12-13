@@ -24,7 +24,7 @@
     "connect-history-api-fallback": "^1.6.0",
     "core-js": "^3.6.5",
     "cross-env": "^7.0.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "http-proxy-middleware": "^1.0.5",
     "mand-mobile": "^2.5.1",
     "normalize.css": "^8.0.0",
